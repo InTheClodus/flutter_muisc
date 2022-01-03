@@ -97,129 +97,136 @@ class _IndexProfileState extends State<IndexProfile>
           )
         ],
       ),
-      body: Column(
-        children: [
-          const _UserInfoCard(),
-          const _WelfareWidget(),
-          TabBar(
-            indicatorColor: const Color(0xFF33BFF9),
-            indicatorWeight: 5,
-            indicatorSize: TabBarIndicatorSize.label,
-            labelColor: Colors.black,
-            unselectedLabelStyle: TextStyle(
-                fontFamily: "ssjhzxtc", fontSize: ScreenUtil().setSp(15)),
-            labelStyle: TextStyle(
-                fontFamily: "Founder", fontSize: ScreenUtil().setSp(20)),
-            tabs: const <Tab>[
-              Tab(text: '音乐'),
-              Tab(text: '频道'),
-              Tab(text: '帖子'),
-              // Tab(text: '帖子'),
-            ],
-            controller: tabController,
-          ),
-          Expanded(
-
-            child: ExtendedTabBarView(
-
-              children: <Widget>[
-                EasyRefresh(child: Column(
-                  children: const [
-                    _MusicView(),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                  ],
-                )),
-                Column(
-                  children: <Widget>[
-                    TabBar(
-                      indicatorColor: const Color(0xFF33BFF9),
-                      indicatorWeight: 5,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      unselectedLabelStyle: TextStyle(
-                          fontFamily: "ssjhzxtc",
-                          fontSize: ScreenUtil().setSp(15)),
-                      labelStyle: TextStyle(
-                          fontFamily: "Founder",
-                          fontSize: ScreenUtil().setSp(20)),
-                      labelColor: Colors.black,
-                      tabs: const <Tab>[
-                        Tab(text: '全部'),
-                        Tab(text: '管理'),
-                      ],
-                      controller: tabController1,
-                    ),
-                    Expanded(
-                      child: ExtendedTabBarView(
-                        children: const <Widget>[
-                          Text('Tab01'),
-                          Text('Tab01'),
+      body: EasyRefresh(
+        child: CustomScrollView(
+          shrinkWrap: true,
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: const [_UserInfoCard(),
+                  _WelfareWidget()],
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: TabBar(
+                indicatorColor: const Color(0xFF33BFF9),
+                indicatorWeight: 5,
+                indicatorSize: TabBarIndicatorSize.label,
+                labelColor: Colors.black,
+                unselectedLabelStyle: TextStyle(
+                    fontFamily: "ssjhzxtc", fontSize: ScreenUtil().setSp(15)),
+                labelStyle: TextStyle(
+                    fontFamily: "Founder", fontSize: ScreenUtil().setSp(20)),
+                tabs: const <Tab>[
+                  Tab(text: '音乐'),
+                  Tab(text: '频道'),
+                  Tab(text: '帖子'),
+                  // Tab(text: '帖子'),
+                ],
+                controller: tabController,
+              ),
+            ),
+            SliverFillRemaining(
+              child: ExtendedTabBarView(
+                children: <Widget>[
+                  Column(
+                    children: const [
+                      _MusicView(),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      TabBar(
+                        indicatorColor: const Color(0xFF33BFF9),
+                        indicatorWeight: 5,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        unselectedLabelStyle: TextStyle(
+                            fontFamily: "ssjhzxtc",
+                            fontSize: ScreenUtil().setSp(15)),
+                        labelStyle: TextStyle(
+                            fontFamily: "Founder",
+                            fontSize: ScreenUtil().setSp(20)),
+                        labelColor: Colors.black,
+                        tabs: const <Tab>[
+                          Tab(text: '全部'),
+                          Tab(text: '管理'),
                         ],
                         controller: tabController1,
                       ),
-                    )
-                  ],
-                ),
-                Column(
-                  children: <Widget>[
-                    TabBar(
-                      indicatorColor: const Color(0xFF33BFF9),
-                      indicatorWeight: 5,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      unselectedLabelStyle: TextStyle(
-                          fontFamily: "ssjhzxtc",
-                          fontSize: ScreenUtil().setSp(15)),
-                      labelStyle: TextStyle(
-                          fontFamily: "Founder",
-                          fontSize: ScreenUtil().setSp(20)),
-                      labelColor: Colors.black,
-                      tabs: const <Tab>[
-                        Tab(text: '赞过'),
-                        Tab(text: '收藏'),
-                        Tab(text: '发布'),
-                        Tab(text: '投稿'),
-                      ],
-                      controller: tabController2,
-                    ),
-                    Expanded(
-                      child: ExtendedTabBarView(
-                        children: const <Widget>[
-                          Text('赞过页面'),
-                          Text('收藏页面'),
-                          Text('发布页面'),
-                          Text('投稿页面'),
+                      Expanded(
+                        child: ExtendedTabBarView(
+                          children: const <Widget>[
+                            Text('Tab01'),
+                            Text('Tab01'),
+                          ],
+                          controller: tabController1,
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      TabBar(
+                        indicatorColor: const Color(0xFF33BFF9),
+                        indicatorWeight: 5,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        unselectedLabelStyle: TextStyle(
+                            fontFamily: "ssjhzxtc",
+                            fontSize: ScreenUtil().setSp(15)),
+                        labelStyle: TextStyle(
+                            fontFamily: "Founder",
+                            fontSize: ScreenUtil().setSp(20)),
+                        labelColor: Colors.black,
+                        tabs: const <Tab>[
+                          Tab(text: '赞过'),
+                          Tab(text: '收藏'),
+                          Tab(text: '发布'),
+                          Tab(text: '投稿'),
                         ],
                         controller: tabController2,
                       ),
-                    )
-                  ],
-                ),
-              ],
-              controller: tabController,
-            ),
-          )
-        ],
+                      Expanded(
+                        child: ExtendedTabBarView(
+                          children: const <Widget>[
+                            Text('赞过页面'),
+                            Text('收藏页面'),
+                            Text('发布页面'),
+                            Text('投稿页面'),
+                          ],
+                          controller: tabController2,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+                controller: tabController,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
